@@ -36,12 +36,6 @@ class CreateClassViewController: UIViewController{
     var lastN: String = ""
     
     @IBAction func createClass(_ sender: Any) {
-        if period == nil && className == nil
-        {
-            
-        }
-        else
-        {
             per = Int(period.text!)!
             name = String(className.text!)
             var mobileapps = Classroom(per, name)
@@ -51,7 +45,6 @@ class CreateClassViewController: UIViewController{
             period.text = ""
             className.text = ""
             submitClass.setTitle( "Submit Edit" , for: .normal)
-        }
     }
     @IBAction func createStudent(_ sender: Any) {
         firstN = String(firstName.text!)
