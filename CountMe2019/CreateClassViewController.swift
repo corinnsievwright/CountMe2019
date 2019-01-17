@@ -34,17 +34,22 @@ class CreateClassViewController: UIViewController{
     var name: String = ""
     var firstN: String = ""
     var lastN: String = ""
+    var classIndex: Int = 0
+    var count: Int = 0
     
     @IBAction func createClass(_ sender: Any) {
+    if period.text != "" && className.text != ""
+        {
             per = Int(period.text!)!
             name = String(className.text!)
-            var mobileapps = Classroom(per, name)
-            classesArray.append(mobileapps)
+            var newClass = Classroom(per, name)
+            classesArray.append(newClass)
             periodFinal.text = String(per)
             classNameFinal.text = name
             period.text = ""
             className.text = ""
             submitClass.setTitle( "Submit Edit" , for: .normal)
+        }
     }
     @IBAction func createStudent(_ sender: Any) {
         firstN = String(firstName.text!)
